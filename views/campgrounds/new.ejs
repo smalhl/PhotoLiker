@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+	<div class="container" style="width: 25%; margin: 4rem auto">
+		<h1 style="text-align: center; margin: auto">Create a new CampGround</h1>
+
+		<form action="/home" method="POST">
+			<div class="input-group mb-3" style="margin-top: 20px">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+				</div>
+					<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="name">
+			</div>
+
+			<div class="input-group mb-3" style="margin-top: 20px">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Price</span>
+				</div>
+				<input type="number" class="form-control" aria-label="Sizing example input"
+					   aria-describedby="inputGroup-sizing-default" name="price"
+						min="0.01" step="0.01">
+			</div>
+
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon3">Url</span>
+				</div>
+					<input type="text" class="form-control" id="basic-url" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="img">
+			</div>
+
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon3">Description</span>
+				</div>
+				<input type="text" class="form-control" id="basic-url" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="description">
+			</div>
+			<input type="submit" class="btn btn-info btn-lg btn-block">
+		</form>
+		<a href="/home">Go back</a>
+	</div>
+<% include ../partials/footer %>
+
