@@ -33,11 +33,13 @@ router.get("/login", (req, res) =>{
 });
 
 //handle the login action
-router.post("/login",passport.authenticate("local",{
-    successRedirect: "/home",
-    failureRedirect: "/login"
-}), (req, res) =>{
-});
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/home',
+    failureRedirect: '/login',
+    successFlash: 'Welcome back!',
+    failureFlash: true })
+);
+
 
 //logout
 router.get("/logout", (req, res) =>{

@@ -1,16 +1,15 @@
 <% include ./partials/header%>
-
-<h1 style="text-align: center; margin-top: 5%">Register Form</h1>
-    <form action="/register" method="POST" style="padding-left: 25%; padding-right: 25%">
+    <form action="/register" method="POST" style="margin: 50px auto; width: 30%">
+        <h1 style="text-align: center">Register Form</h1>
         <div class="form-group">
             <label>UserName</label>
-            <input type="text" class="form-control" placeholder="Enter username" name="username">
+            <input type="text" class="form-control" placeholder="Username" name="username">
         </div>
         <div class="form-group">
             <label>Password</label>
             <input type="password" class="form-control" placeholder="Password" name="password">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-info btn-block">Sign In</button>
+        <a href="/home">Go Back!</a>
     </form>
-
 <% include ./partials/footer%>
