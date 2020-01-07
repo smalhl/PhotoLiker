@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <p class="lead">YelpCamp</p>
+            <p class="lead">PhotoLiker</p>
             <div class="list-group">
                 <li class="list-group-item">Info 1</li>
                 <li class="list-group-item">Info 2</li>
@@ -25,12 +25,12 @@
             <div class="img-thumbnail">
                 <img src="<%= foundCamp.img %>">
                 <div class="caption-full">
-                    <h4 class="float-right">$<%= foundCamp.price %>/night</h4>
+                    <h4 class="float-right">$<%= foundCamp.price %>/trip</h4>
                     <h4><a href="#"><%= foundCamp.name %></a></h4>
                     <p><%= foundCamp.description%></p>
                     <p><em><strong>Submitted By <a href="/home/<%= foundCamp.author.id %>/profile"><%= foundCamp.author.username %></a></strong></em></p>
 
-                    <% if (currentUser && foundCamp.author.id.equal(currentUser._id)){%>
+                    <% if (currentUser && foundCamp.author.id.equals(currentUser._id)){%>
                         <a class="btn btn-success btn-md" href="/home/<%= foundCamp._id %>/edit">Edit</a>
                         <form id="delete-form" action="/home/<%= foundCamp._id %>?_method=DELETE" method="post">
                             <button class="btn btn-danger btn-md">Delete</button>

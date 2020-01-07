@@ -15,13 +15,6 @@ const express      = require("express"),
 
 mongoose.connect("mongodb://localhost:27017/yelpCamp", {useNewUrlParser:true, useUnifiedTopology: true});
 
-// mongoose.connect('mongodb+srv://samxiao:Qwaszx7845129630@cluster0-uqalu.mongodb.net/test?retryWrites=true&w=majority',
-//     {useNewUrlParser: true, useCreateIndex: true}).then(() =>{
-//             console.log("Connected to Atlas");
-// }).catch(err =>{
-//     console.log(err.message);
-// });
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
