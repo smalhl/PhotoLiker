@@ -28,9 +28,9 @@
                     <h4 class="float-right">$<%= foundCamp.price %>/night</h4>
                     <h4><a href="#"><%= foundCamp.name %></a></h4>
                     <p><%= foundCamp.description%></p>
-                    <p><em>Submitted By <%= foundCamp.author.username %></em></p>
+                    <p><em><strong>Submitted By <a href="/home/<%= foundCamp.author.id %>/profile"><%= foundCamp.author.username %></a></strong></em></p>
 
-                    <% if (currentUser && foundCamp.author.id.equals(currentUser._id)){%>
+                    <% if (currentUser && foundCamp.author.id.equal(currentUser._id)){%>
                         <a class="btn btn-success btn-md" href="/home/<%= foundCamp._id %>/edit">Edit</a>
                         <form id="delete-form" action="/home/<%= foundCamp._id %>?_method=DELETE" method="post">
                             <button class="btn btn-danger btn-md">Delete</button>
@@ -67,4 +67,3 @@
     </div>
 </div>
 <% include ../partials/footer %>
-

@@ -10,15 +10,17 @@ const express      = require("express"),
 
       CampgroundRoutes = require("./routes/campground"),
       CommentsRoutes = require("./routes/comments"),
-      IndexRoutes = require("./routes/index")
+      IndexRoutes = require("./routes/index"),
+      ProfileRoutes = require("./routes/profile")
 
-//mongoose.connect("mongodb://localhost:27017/yelpCamp", {useNewUrlParser:true, useUnifiedTopology: true});
-mongoose.connect('mongodb+srv://samxiao:Qwaszx7845129630@cluster0-uqalu.mongodb.net/test?retryWrites=true&w=majority',
-    {useNewUrlParser: true, useCreateIndex: true}).then(() =>{
-            console.log("Connected to Atlas");
-}).catch(err =>{
-    console.log(err.message);
-});
+mongoose.connect("mongodb://localhost:27017/yelpCamp", {useNewUrlParser:true, useUnifiedTopology: true});
+
+// mongoose.connect('mongodb+srv://samxiao:Qwaszx7845129630@cluster0-uqalu.mongodb.net/test?retryWrites=true&w=majority',
+//     {useNewUrlParser: true, useCreateIndex: true}).then(() =>{
+//             console.log("Connected to Atlas");
+// }).catch(err =>{
+//     console.log(err.message);
+// });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
@@ -50,6 +52,7 @@ app.use(function (req, res, next) {
 app.use("/home", CampgroundRoutes);
 app.use("/home/:id/comment", CommentsRoutes);
 app.use(IndexRoutes);
+app.use("/home",ProfileRoutes);
 
 //listen to the port
 var port = process.env.PORT || 3000;

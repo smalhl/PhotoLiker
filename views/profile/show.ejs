@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h1><strong><%= foundUser.username %></strong></h1>
+                <% if(!foundUser.userImg){ %>
+                    <a href="#">Want to add profile photo?</a>
+                <% }else{ %>
+                    <img src="<%= foundUser.userImg %>">
+                <% } %>
+<!--                home/:current_user_id/profile/edit-->
+                <% if(!foundUser.userDes){ %>
+                    <a href="#">Want to share something about yourself?</a>
+                <% }else{ %>
+                    <p><%= foundUser.userDes %></p>
+                <% } %>
+            </div>
+
+            <div class="col-md-9">
+                <h4><%= foundUser.username %>'s campground:</h4>
+
+                <% campgrounds.forEach((content) =>{ %>
+                    <ul>
+                        <li><a href="/home/<%= content._id %>"><%= content.name %></a></li>
+                    </ul>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+<% include ../partials/footer %>
